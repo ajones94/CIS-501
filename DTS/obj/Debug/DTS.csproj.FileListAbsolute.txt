@@ -1,0 +1,32 @@
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\bin\Debug\DTS.dll.config
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\bin\Debug\DTS.dll
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\bin\Debug\DTS.pdb
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\obj\Debug\DTS.csprojResolveAssemblyReference.cache
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\obj\Debug\DTS_Project.Properties.Resources.resources
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\obj\Debug\DTS.csproj.GenerateResource.Cache
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\obj\Debug\DTS.dll
+C:\Users\Anson Jones\Downloads\Project2_DTS_Project\Project2_DTS_Project\DTS\obj\Debug\DTS.pdb
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\obj\Debug\DTS.csprojResolveAssemblyReference.cache
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\obj\Debug\DTS_Project.Properties.Resources.resources
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\obj\Debug\DTS.csproj.GenerateResource.Cache
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\obj\Debug\DTS.dll
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\obj\Debug\DTS.pdb
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\bin\Debug\DTS.dll.config
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\bin\Debug\DTS.dll
+C:\Users\Anson Jones\Desktop\Project2_DTS_Project\DTS\bin\Debug\DTS.pdb
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.dll.config
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.dll
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.pdb
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.csprojResolveAssemblyReference.cache
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS_Project.Properties.Resources.resources
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.csproj.GenerateResource.Cache
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.dll
+C:\Users\Anson Jones\Desktop\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.pdb
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.dll.config
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.dll
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\bin\Debug\DTS.pdb
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.csprojResolveAssemblyReference.cache
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS_Project.Properties.Resources.resources
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.csproj.GenerateResource.Cache
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.dll
+C:\Users\Anson Jones\Dropbox\Project 2\Project 2\Project2_DTS_Project\DTS\obj\Debug\DTS.pdb
