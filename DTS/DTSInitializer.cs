@@ -13,6 +13,7 @@ namespace DTS_Project
         // the TelephoneController and TerminalController objects
         public static void Initialize(TelephoneController telephoneController, TerminalController terminalController)
         {
+
         }
     }
 }
