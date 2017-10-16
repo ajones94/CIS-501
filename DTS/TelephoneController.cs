@@ -11,6 +11,7 @@ namespace DTS_Project
         DateTime endCall;
         Tenant tenant;
         List<Tenant> tenants;
+
         private ITelephoneDevice telephoneDevice;
         // You need to add reference and/or value fields of TelephoneController
         // You may need to add Set methods to set the initlize values of these fields
@@ -26,9 +27,12 @@ namespace DTS_Project
             // Receive an access code
             string accessCode = null;
             if (!telephoneDevice.GetAccessCode(ref accessCode)) return;
-            if (tenant == null) return;
-            else
             tenant = tenants.Find(x => x.AccessCode == accessCode);
+            if(tenant == null)
+            {
+                return;
+            }
+
 
             // Recieve a telephone number
             string areaCode = null;
