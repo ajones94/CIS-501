@@ -15,7 +15,6 @@ namespace DTS_Project
         DateTime callStart;
         DateTime callEnd;
 
-
         public Call(string AreaCode, string ExchangeCode, string Number, DateTime CallStart, DateTime CallEnd)
         {
             this.areaCode = AreaCode;
