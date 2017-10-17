@@ -8,16 +8,7 @@ namespace DTS_Project
 {
     public class TenantManager
     {
-        TenantManager tenantManager;
         List<Tenant> tenants;
-
-        public TenantManager SetManager
-        {
-            set
-            {
-                tenantManager = value;
-            }
-        }
 
         public TenantManager()
         {
