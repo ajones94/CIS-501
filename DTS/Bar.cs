@@ -15,7 +15,8 @@ namespace DTS_Project
 
         public bool CheckBarred(string areaCode, string exchange, string number)
         {
-            if (AreaCode == areaCode || Exchange == exchange || Number == number) { return true; }
+            if (this.AreaCode == areaCode) { return true; }
+            else if (this.Exchange == exchange || Number == number) { return true; }
             else return false;
         }
     }

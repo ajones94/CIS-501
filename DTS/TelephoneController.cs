@@ -39,7 +39,7 @@ namespace DTS_Project
             string exchange = null;
             string number = null;
             if (!telephoneDevice.GetTelephoneNumber(ref areaCode, ref exchange, ref number)) return;
-            if (tenants.Any(x => x.FindBarNumber(areaCode, exchange, number))) return;
+            if (tenants.Any(x => x.VerifyBarNumber(areaCode, exchange, number))) return;
 
             startCall = DateTime.Now;
             // Connect the phone

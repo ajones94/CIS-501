@@ -62,7 +62,7 @@ namespace DTS_Project
             baredNumbers.RemoveAll(x => x.AreaCode == areaCode && x.Exchange == exchange && x.Number == number);
         }
 
-        public bool FindBarNumber(string areaCode, string Exchange, string Number)
+        public bool VerifyBarNumber(string areaCode, string Exchange, string Number)
         {
             return baredNumbers.Any(e => e.CheckBarred(areaCode, Exchange, Number));
         }
