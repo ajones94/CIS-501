@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace DTS_Project
 {
-    static class Administrator
+    class Administrator
     {
-        static string password = "handed";
-        public static bool CheckPassword(string Password)
+        string password = "handed";
+
+        public Administrator() { }
+        public bool CheckPassword(string Password)
         {
             if (Password != password && Password != "ksu") return false;
             else return true;
         }
-        public static void SetPassword(string Password)
+        public void SetPassword(string Password)
         {
             password = Password;
         }

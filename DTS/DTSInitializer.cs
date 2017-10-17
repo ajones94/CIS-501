@@ -13,7 +13,9 @@ namespace DTS_Project
         // the TelephoneController and TerminalController objects
         public static void Initialize(TelephoneController telephoneController, TerminalController terminalController)
         {
-
+            TenantManager tenantManager = new TenantManager();
+            telephoneController.SetTenantManager = tenantManager;
+            terminalController.SetManager = tenantManager;
         }
     }
 }

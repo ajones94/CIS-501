@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DTS_Project
 {
     [Serializable()]
-    class Bar
+    public class Bar
     {
         public string AreaCode { get; set; }
         public string Exchange{ get; set; }
@@ -15,8 +15,7 @@ namespace DTS_Project
 
         public bool CheckBarred(string areaCode, string exchange, string number)
         {
-            if (AreaCode == areaCode) { return true; }
-            else if (AreaCode == areaCode && Exchange == exchange && Number == number) { return true; }
+            if (AreaCode == areaCode || Exchange == exchange || Number == number) { return true; }
             else return false;
         }
     }

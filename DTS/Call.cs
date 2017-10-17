@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DTS_Project
 {
     [Serializable()]
-    class Call
+    public class Call
     {
         string areaCode;
         string exchangeCode;

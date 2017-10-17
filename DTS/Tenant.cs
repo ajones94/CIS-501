@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DTS_Project
 {
     [Serializable()]
-    class Tenant
+    public class Tenant
     {
         string firstName;
         string lastName;
@@ -56,16 +56,17 @@ namespace DTS_Project
         {
             baredNumbers.RemoveAll(x => x.AreaCode == areaCode);
         }
+
         public void UnBarNumber(string areaCode, string exchange, string number)
         {
             baredNumbers.RemoveAll(x => x.AreaCode == areaCode && x.Exchange == exchange && x.Number == number);
         }
 
-        public Bar FindBarNumber(string areaCode, string Exchange, string Number)
+        public bool FindBarNumber(string areaCode, string Exchange, string Number)
         {
-            Bar barred = baredNumbers.Find(x=> x.AreaCode == areaCode || x.Exchange == Exchange || x.Number == Number);
-            return barred;
+            return baredNumbers.Any(e => e.CheckBarred(areaCode, Exchange, Number));
         }
+
         public List<Call> DisplayCalls()
         {
             return calls;

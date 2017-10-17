@@ -7,6 +7,8 @@ namespace DTS_Project
 {
     public class TelephoneController
     {
+        TenantManager Manager;
+        public TenantManager SetTenantManager { set { Manager = value; } }
         DateTime startCall;
         DateTime endCall;
         Tenant tenant;
@@ -23,7 +25,7 @@ namespace DTS_Project
         }
         public void Activate()
         {
-            tenants = TenantList.RetrieveList();
+            tenants = Manager.ObtainList();
             // Receive an access code
             string accessCode = null;
             if (!telephoneDevice.GetAccessCode(ref accessCode)) return;
@@ -37,8 +39,7 @@ namespace DTS_Project
             string exchange = null;
             string number = null;
             if (!telephoneDevice.GetTelephoneNumber(ref areaCode, ref exchange, ref number)) return;
-            Bar barred = tenant.FindBarNumber(areaCode, exchange, number);
-            if (barred != null) { if (barred.CheckBarred(areaCode, exchange, number)) return; }
+            if (tenants.Any(x => x.FindBarNumber(areaCode, exchange, number))) return;
 
             startCall = DateTime.Now;
             // Connect the phone

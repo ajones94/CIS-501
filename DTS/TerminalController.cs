@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-
 namespace DTS_Project
 {
-
     public class TerminalController
     {
-        private ITerminalDevice terminalDevice;
-        List<Tenant> currentTenants;
-        Tenant workOnTenant;
+        TenantManager Manager;
+        public TenantManager SetManager { set { Manager = value; } }
 
+        Administrator admin = new Administrator();
+
+        private ITerminalDevice terminalDevice;
+
+        Tenant workOnTenant;
         public TerminalController(ITerminalDevice terminalDevice)
         {
             this.terminalDevice = terminalDevice;
-            currentTenants = new List<Tenant>();
         }
 
         public void Activate()
@@ -26,7 +27,7 @@ namespace DTS_Project
             // if a user presses "Cancel", do nothing and just return
             string password = null;
             if (!terminalDevice.GetPassword(ref password)) return;
-            if (!Administrator.CheckPassword(password)) return;
+            if (!admin.CheckPassword(password)) return;
             terminalDevice.ShowMainMenuDialog(this);
         }
 
@@ -39,8 +40,8 @@ namespace DTS_Project
             string lastName = null;
             string accessCode = null;
             if (!terminalDevice.GetTenantInfo(ref firstName, ref lastName, ref accessCode)) return;
-            currentTenants.Add(new Tenant(firstName, lastName, accessCode));
-            TenantList.ObtainList(currentTenants);
+            Tenant tenant = new Tenant(firstName, lastName, accessCode);
+            Manager.AddTenant(tenant);
         }
 
         public void DeleteTenant_Handler()
@@ -50,8 +51,7 @@ namespace DTS_Project
             string firstName = null;
             string lastName = null;
             if (!terminalDevice.GetTenantName(ref firstName, ref lastName)) return;
-            Tenant tenant = currentTenants.Find(x => x.FirstName == firstName && x.LastName == lastName);
-            currentTenants.Remove(tenant);
+            Manager.RemoveTenant(Manager.FindTenant(firstName, lastName));
 
         }
 
@@ -62,7 +62,7 @@ namespace DTS_Project
             string firstName = null;
             string lastName = null;
             if (!terminalDevice.GetTenantName(ref firstName, ref lastName)) return;
-            workOnTenant = currentTenants.Find(x => x.FirstName == firstName && x.LastName == lastName);
+            workOnTenant = Manager.FindTenant(firstName, lastName);
             if(workOnTenant != null)
             {
                 terminalDevice.ShowTenantMenuDialog(this);
@@ -72,7 +72,7 @@ namespace DTS_Project
         public void DisplayTenantList_Handler()
         {
             // call "void DisplayList(object[] list)" to list Tenants
-            object[] tenants = currentTenants.ToArray();
+            object[] tenants = Manager.ObtainList().ToArray();
             terminalDevice.DisplayList(tenants);
         }
 
@@ -82,7 +82,7 @@ namespace DTS_Project
             using (FileStream f = new FileStream("DTSsavefile.svf",
                 FileMode.Create, FileAccess.Write))
             {
-                fo.Serialize(f, currentTenants);
+                fo.Serialize(f, Manager.ObtainList());
             }
         }
         public void Restore_Handler()
@@ -91,8 +91,7 @@ namespace DTS_Project
             using (FileStream f = new FileStream("DTSsavefile.svf",
                 FileMode.Open, FileAccess.Read))
             {
-                currentTenants = (List<Tenant>)fo.Deserialize(f);
-                TenantList.ObtainList(currentTenants);
+                Manager.SetList((List<Tenant>)fo.Deserialize(f));
             }
         }
 
@@ -100,7 +99,7 @@ namespace DTS_Project
         {
             string password = null;
             if (!terminalDevice.GetPassword(ref password)) return;
-            Administrator.SetPassword(password);
+            admin.SetPassword(password);
 
         }
 
