@@ -29,10 +29,7 @@ namespace DTS_Project
             if (!telephoneDevice.GetAccessCode(ref accessCode)) return;
             if (tenants == null) return;
             tenant = tenants.Find(x => x.AccessCode == accessCode);
-            if(tenant == null)
-            {
-                return;
-            }
+            if (tenant == null) return;
 
 
             // Recieve a telephone number
@@ -41,10 +38,7 @@ namespace DTS_Project
             string number = null;
             if (!telephoneDevice.GetTelephoneNumber(ref areaCode, ref exchange, ref number)) return;
             Bar barred = tenant.FindBarNumber(areaCode, exchange, number);
-            if(barred != null)
-            {
-                if (barred.CheckBarred(areaCode, exchange, number)) return;
-            }
+            if (barred != null) { if (barred.CheckBarred(areaCode, exchange, number)) return; }
 
             startCall = DateTime.Now;
             // Connect the phone
