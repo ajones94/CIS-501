@@ -60,6 +60,12 @@ namespace DTS_Project
         {
             baredNumbers.RemoveAll(x => x.AreaCode == areaCode && x.Exchange == exchange && x.Number == number);
         }
+
+        public Bar FindBarNumber(string areaCode, string Exchange, string Number)
+        {
+            Bar barred = baredNumbers.Find(x=> x.AreaCode == areaCode || x.Exchange == Exchange || x.Number == Number);
+            return barred;
+        }
         public List<Call> DisplayCalls()
         {
             return calls;

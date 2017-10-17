@@ -27,6 +27,7 @@ namespace DTS_Project
             // Receive an access code
             string accessCode = null;
             if (!telephoneDevice.GetAccessCode(ref accessCode)) return;
+            if (tenants == null) return;
             tenant = tenants.Find(x => x.AccessCode == accessCode);
             if(tenant == null)
             {
@@ -39,6 +40,11 @@ namespace DTS_Project
             string exchange = null;
             string number = null;
             if (!telephoneDevice.GetTelephoneNumber(ref areaCode, ref exchange, ref number)) return;
+            Bar barred = tenant.FindBarNumber(areaCode, exchange, number);
+            if(barred != null)
+            {
+                if (barred.CheckBarred(areaCode, exchange, number)) return;
+            }
 
             startCall = DateTime.Now;
             // Connect the phone
