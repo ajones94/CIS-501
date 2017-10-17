@@ -84,19 +84,4 @@ namespace DTS_Project
         }
 
     }
-
-    static class TenantList
-    {
-        static List<Tenant> tenants;
-
-        public static void ObtainList(List<Tenant> Tenants)
-        {
-            tenants = new List<Tenant>(Tenants);
-        }
-
-        public static List<Tenant> RetrieveList()
-        {
-            return tenants;
-        } 
-    }
 }
